@@ -3,7 +3,7 @@ a model for developing an 11ty site
 
 11ty lets you build a site with customized templates that you organize to design your own site layouts.
 It lets you develop pages and include content with with your own layout designs. 
-Here are instructions and resources for setting up a static 11ty site on GitHub, adapted from Savannah Ricks's "behind the scenes" instructions on her [Crochet Project](https://crochetproject.github.io/CrochetCraze/) project site. 
+Here are instructions and resources for setting up a static 11ty site on GitHub, adapted from Savannah Ricks's "behind the scenes" instructions on her [Crochet Craze](https://crochetproject.github.io/CrochetCraze/) project site. 
 
 ## Resources
 * [11y.dev documentation](https://www.11ty.dev/)
