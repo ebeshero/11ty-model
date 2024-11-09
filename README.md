@@ -19,8 +19,8 @@ Here are instructions and resources for setting up a static 11ty site on GitHub,
      
 1. Make a new project for your repo in Webstorm, or open your code editor of choice. Open `package.json` and add the following commands into the “script” (carefully following its JSON structure):
 
-    * `“start”: “eleventy --serve”,` 
-    * `“build”: “eleventy”`
+    * `"start": "eleventy --serve",` 
+    * `"build": "eleventy"`
     
 You'll be frequently using these commands in your terminal to develop and build your site.
 
@@ -50,8 +50,8 @@ Insert this JavaScript code as the contents of this file:
 module.exports = function (eleventyConfig){
     return{
         dir: {
-            input: “_src”,
-            output: “_site”
+            input: "_src",
+            output: "_site"
         },
       };
 };
@@ -103,7 +103,7 @@ layout: base.njk
 ---
 ```
 
-The --- are called "fences" and we'll be using them a lot on your files to store information like this. The content inside the fences are basically variables that store the title of the page and the layout file that will control it.
+The --- are called “fences” and we'll be using them a lot on your files to store information like this. The content inside the fences are basically variables that store the title of the page and the layout file that will control it.
 
     * The title can be anything you like.
     * Everything within this `index.md` file is considered the "content" that is being pulled in through the Nunjucks in base.njk that you created.
@@ -137,8 +137,8 @@ module.exports = function (eleventyConfig){
      
      return{
          dir: {
-            input: “_src”,
-            output: “_site”
+            input: "_src",
+            output: "_site"
         },
     };
 };
