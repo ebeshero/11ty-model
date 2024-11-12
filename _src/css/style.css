@@ -12,3 +12,7 @@ h1 {color: #5F0000;
     padding: .5em;
 }
 
+div#footer {display:flex;}
+
+img#newt {max-width:400px;}
+
