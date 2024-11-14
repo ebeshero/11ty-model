@@ -1,5 +1,6 @@
 ---
 title: Home
+param: Firebelly Newt
 layout: base.njk
 ---
 
