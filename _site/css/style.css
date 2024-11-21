@@ -11,6 +11,7 @@ h1 {color: #5F0000;
     text-align:center;
     padding: .5em;
 }
+
 div.flex {display: flex;
     justify-content:space-evenly;
     width:90vw;
