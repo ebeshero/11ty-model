@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const imagesFolder = './img';
 
-
 function imageToJson(imagesFolder) {
     const imageFiles = fs.readdirSync(imagesFolder);
 
@@ -22,7 +21,7 @@ function imageToJson(imagesFolder) {
     console.log(jsonData);
 
     // To write to a file:
-    fs.writeFileSync('image_metadata.json', jsonData);
+    fs.writeFileSync('_data/image_metadata.json', jsonData);
 }
 
 imageToJson(imagesFolder);
