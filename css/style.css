@@ -12,7 +12,25 @@ h1 {color: #5F0000;
     padding: .5em;
 }
 
-div#footer {display:flex;}
+div.flex {display: flex;
+    justify-content:space-evenly;
+    width:90vw;
+    background-color:lemonchiffon;
+}
 
-img#newt {max-width:400px;}
+div.flex img {
+    max-width:200px;
+    width:80%;}
+
+div#footer {
+    width:80%;
+    margin:auto;
+    display:flex;
+    justify-content: space-evenly;
+    font-size: smaller;
+}
+
+img#newt {
+    max-width:100px;
+    width:80%;}
 
