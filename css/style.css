@@ -11,25 +11,8 @@ h1 {color: #5F0000;
     text-align:center;
     padding: .5em;
 }
-div.flex {display: flex;
-    justify-content:space-evenly;
-    width:90vw;
-    background-color:lemonchiffon;
-}
 
-div.flex img {
-    max-width:200px;
-    width:80%;}
+div#footer {display:flex;}
 
-div#footer {
-    width:80%;
-    margin:auto;
-    display:flex;
-    justify-content: space-evenly;
-    font-size: smaller;
-}
-
-img#newt {
-    max-width:100px;
-    width:80%;}
+img#newt {max-width:400px;}
 
