@@ -23,6 +23,19 @@
  <p>What's my permalink parameter? {{ permalink }} </p>
 
     {{ content | safe }}
+<ul>
+     {% for file in image_metadata -%}
+         <li>{{ file.filename }}</li>
+         {% endfor -%}
+</ul>
+
+<div class="flex">
+{% for file in image_metadata -%}
+         <figure><img src="{{ file.filepath }}" alt="{{ file.filename }}"/>
+             <figcaption>{{ file.filename }}</figcaption>
+         </figure>
+         {% endfor -%}
+</div>
 
  {% include  "layouts/footer.html" %}
 
