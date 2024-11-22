@@ -1,3 +1,8 @@
+/* ebb: This is the JS file that reads a directory of image files (with no subdirectories)
+and outputs a JSON  file representing info about each image. Because I've now added subdirectories to my img folder,
+  this will now simply output a file inside _data with an empty array: [ ]. Work with this file if you have a simple
+   directories of image files with no topical subdirectories. For handling topical subdirectories,
+   try imageTopicData-to-JSON.js saved here in the same _src folder.*/
 const fs = require('fs');
 const path = require('path');
 const imagesFolder = './img';
