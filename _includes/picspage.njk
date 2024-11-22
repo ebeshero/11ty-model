@@ -23,19 +23,52 @@
  <p>What's my permalink parameter? {{ permalink }} </p>
 
     {{ content | safe }}
-<ul>
-     {% for file in image_metadata -%}
-         <li>{{ file.filename }}</li>
-         {% endfor -%}
-</ul>
 
-<div class="flex">
-{% for file in image_metadata -%}
-         <figure><img src="{{ file.filepath }}" alt="{{ file.filename }}"/>
-             <figcaption>{{ file.filename }}</figcaption>
-         </figure>
+{{ alltopics | dump }}
+
+ <ul>
+     {% for topic in alltopics.topics %}
+         <li>{{ topic }}</li>
+     {% endfor %}
+ </ul>
+
+
+ <section class="gallery">
+     <h2>animals</h2>
+     <div class="flex">
+         {% for animal in animals.animals -%}
+             <figure>
+                 <img src=" {{ animal.filepath }}" alt=" {{  animal.filename }}"/>
+
+                 <figcaption> {{ animal.filename }}</figcaption>
+             </figure>
          {% endfor -%}
-</div>
+
+
+
+     </div>
+ </section>
+
+ <p>For the next portion I'm attempting to read in variables and output each set of images matched to the changing variable. This isn't working yet.  </p>
+
+ {% for topic in alltopics.topics %}
+     <section class="{{ topic }}"><h1>{{ topic }}</h1>
+         <div class="flex">
+             {% set subdir = topic ~ "." ~ topic  %}
+             {% set subdirData = data[subdir] %}
+             <p>{{ subdir }}</p>
+             <pre>{{ subdir | dump }}</pre>
+
+                 {% for data in topic.topic %}
+                     <figure>
+                         <img src="{{ data.filepath }}" alt="{{ data.filename }}">
+                     </figure>
+                 {% endfor %}
+
+         </div>
+     </section>
+ {% endfor %}
+
 
  {% include  "layouts/footer.html" %}
 
