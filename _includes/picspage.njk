@@ -12,6 +12,18 @@
            content="ie=edge">
      <title>{{ title }}</title>
      <link rel="stylesheet" href="css/style.css">
+    <script>
+        function toggleSection(topic) {
+            const sections = document.querySelectorAll('section.gallery');
+            sections.forEach(section => {
+                if (section.classList.contains(topic)) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </head>
 <body>
  {% include "layouts/top.html" %}
@@ -20,54 +32,45 @@
 
  <h2>{{ param }}</h2>
 
- <p>What's my permalink parameter? {{ permalink }} </p>
 
-    {{ content | safe }}
 
-{{ alltopics | dump }}
+{{ iamgesMeta | dump }}
 
- <ul>
-     {% for topic in alltopics.topics %}
-         <li>{{ topic }}</li>
-     {% endfor %}
- </ul>
 
 
  <section class="gallery">
-     <h2>animals</h2>
+     <h2>music</h2>
      <div class="flex">
-         {% for animal in animals.animals -%}
+         {% for item in music.music -%}
              <figure>
-                 <img src=" {{ animal.filepath }}" alt=" {{  animal.filename }}"/>
+                 <img src=" {{ item.filepath }}" alt=" {{  item.filename }}"/>
 
-                 <figcaption> {{ animal.filename }}</figcaption>
+                 <figcaption> {{item.filename }}</figcaption>
              </figure>
          {% endfor -%}
-
-
-
      </div>
  </section>
 
- <p>For the next portion I'm attempting to read in variables and output each set of images matched to the changing variable. This isn't working yet.  </p>
-
- {% for topic in alltopics.topics %}
-     <section class="{{ topic }}"><h1>{{ topic }}</h1>
+ <p>We have the following topics with images available for viewing in the gallery today. Please press the button to choose topic you would like to see. </p>
+<section class="pushButton">
+ {% for topic, images in imagesMeta %}
+     <button id="{{ topic }}" onclick="toggleSection('{{ topic }}')">{{ topic }}</button>
+ {% endfor %}
+</section>
+ {% for topic, images in imagesMeta %}
+     <section class="gallery {{ topic }}"><h1>{{ topic }}</h1>
          <div class="flex">
-             {% set subdir = topic ~ "." ~ topic  %}
-             {% set subdirData = data[subdir] %}
-             <p>{{ subdir }}</p>
-             <pre>{{ subdir | dump }}</pre>
-
-                 {% for data in topic.topic %}
+                 {% for image in images %}
                      <figure>
-                         <img src="{{ data.filepath }}" alt="{{ data.filename }}">
+                         <img src="{{ image.filepath }}" alt="{{ image.filename }}"/>
+                         <figcaption>{{ image.filename }}</figcaption>
                      </figure>
                  {% endfor %}
 
          </div>
      </section>
  {% endfor %}
+
 
 
  {% include  "layouts/footer.html" %}

@@ -12,6 +12,18 @@
            content="ie=edge">
      <title>Gallery</title>
      <link rel="stylesheet" href="css/style.css">
+    <script>
+        function toggleSection(topic) {
+            const sections = document.querySelectorAll('section.gallery');
+            sections.forEach(section => {
+                if (section.classList.contains(topic)) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </head>
 <body>
  <nav>
@@ -23,95 +35,116 @@
 
  <h2></h2>
 
- <p>What's my permalink parameter? gallery.html </p>
-
-    
-<div class="gallery">
-    <h2>Greetings!</h2>
-    <p>Welcome to the gallery!</p>
 
 
 
-</div>
 
-{&quot;topics&quot;:[&quot;animals&quot;,&quot;music&quot;,&quot;tech&quot;]}
-
- <ul>
-     
-         <li>animals</li>
-     
-         <li>music</li>
-     
-         <li>tech</li>
-     
- </ul>
 
 
  <section class="gallery">
-     <h2>animals</h2>
+     <h2>music</h2>
      <div class="flex">
          <figure>
-                 <img src=" img/animals/newt-mosaic4.png" alt=" animals/newt-mosaic4.png"/>
+                 <img src=" img/music/bagpipe.png" alt=" music/bagpipe.png"/>
 
-                 <figcaption> animals/newt-mosaic4.png</figcaption>
+                 <figcaption> music/bagpipe.png</figcaption>
              </figure>
          <figure>
-                 <img src=" img/animals/puffin-habitat.jpg" alt=" animals/puffin-habitat.jpg"/>
+                 <img src=" img/music/pan-flute.jpg" alt=" music/pan-flute.jpg"/>
 
-                 <figcaption> animals/puffin-habitat.jpg</figcaption>
+                 <figcaption> music/pan-flute.jpg</figcaption>
              </figure>
          <figure>
-                 <img src=" img/animals/puffin1.jpg" alt=" animals/puffin1.jpg"/>
+                 <img src=" img/music/piano-keys.jpg" alt=" music/piano-keys.jpg"/>
 
-                 <figcaption> animals/puffin1.jpg</figcaption>
-             </figure>
-         <figure>
-                 <img src=" img/animals/xpath-rabbit.png" alt=" animals/xpath-rabbit.png"/>
-
-                 <figcaption> animals/xpath-rabbit.png</figcaption>
+                 <figcaption> music/piano-keys.jpg</figcaption>
              </figure>
          </div>
  </section>
 
- <p>For the next portion I'm attempting to read in variables and output each set of images matched to the changing variable. This isn't working yet.  </p>
-
+ <p>We have the following topics with images available for viewing in the gallery today. Please press the button to choose topic you would like to see. </p>
+<section class="pushButton">
  
-     <section class="animals"><h1>animals</h1>
+     <button id="animals" onclick="toggleSection('animals')">animals</button>
+ 
+     <button id="music" onclick="toggleSection('music')">music</button>
+ 
+     <button id="tech" onclick="toggleSection('tech')">tech</button>
+ 
+</section>
+ 
+     <section class="gallery animals"><h1>animals</h1>
          <div class="flex">
-             
-             
-             <p>animals.animals</p>
-             <pre>&quot;animals.animals&quot;</pre>
-
+                 
+                     <figure>
+                         <img src="img/animals/newt-mosaic4.png" alt="newt-mosaic4"/>
+                         <figcaption>newt-mosaic4</figcaption>
+                     </figure>
+                 
+                     <figure>
+                         <img src="img/animals/puffin-habitat.jpg" alt="puffin-habitat"/>
+                         <figcaption>puffin-habitat</figcaption>
+                     </figure>
+                 
+                     <figure>
+                         <img src="img/animals/puffin1.jpg" alt="puffin1"/>
+                         <figcaption>puffin1</figcaption>
+                     </figure>
+                 
+                     <figure>
+                         <img src="img/animals/xpath-rabbit.png" alt="xpath-rabbit"/>
+                         <figcaption>xpath-rabbit</figcaption>
+                     </figure>
                  
 
          </div>
      </section>
  
-     <section class="music"><h1>music</h1>
+     <section class="gallery music"><h1>music</h1>
          <div class="flex">
-             
-             
-             <p>music.music</p>
-             <pre>&quot;music.music&quot;</pre>
-
+                 
+                     <figure>
+                         <img src="img/music/bagpipe.png" alt="bagpipe"/>
+                         <figcaption>bagpipe</figcaption>
+                     </figure>
+                 
+                     <figure>
+                         <img src="img/music/pan-flute.jpg" alt="pan-flute"/>
+                         <figcaption>pan-flute</figcaption>
+                     </figure>
+                 
+                     <figure>
+                         <img src="img/music/piano-keys.jpg" alt="piano-keys"/>
+                         <figcaption>piano-keys</figcaption>
+                     </figure>
                  
 
          </div>
      </section>
  
-     <section class="tech"><h1>tech</h1>
+     <section class="gallery tech"><h1>tech</h1>
          <div class="flex">
-             
-             
-             <p>tech.tech</p>
-             <pre>&quot;tech.tech&quot;</pre>
-
+                 
+                     <figure>
+                         <img src="img/tech/DIGIT-fingerprint.png" alt="DIGIT-fingerprint"/>
+                         <figcaption>DIGIT-fingerprint</figcaption>
+                     </figure>
+                 
+                     <figure>
+                         <img src="img/tech/circuitHeart.jpg" alt="circuitHeart"/>
+                         <figcaption>circuitHeart</figcaption>
+                     </figure>
+                 
+                     <figure>
+                         <img src="img/tech/pebbleWatch.png" alt="pebbleWatch"/>
+                         <figcaption>pebbleWatch</figcaption>
+                     </figure>
                  
 
          </div>
      </section>
  
+
 
 
  <hr/>
