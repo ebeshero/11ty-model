@@ -6,6 +6,11 @@ and outputs a JSON  file representing info about each image. Because I've now ad
 const fs = require('fs');
 const path = require('path');
 const imagesFolder = './img';
+const imagesSubDirs = imagesFolder.map(subdir =>
+{const subdirPath = path.join(imagesFolder, subdir);
+    console.log('What is my path?' + subdirPath)
+
+}
 
 function imageToJson(imagesFolder) {
     const imageFiles = fs.readdirSync(imagesFolder);

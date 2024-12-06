@@ -1,5 +1,5 @@
 /* ebb: This is a new version of the JS that's designed to read subdirectories in the img folder for images filed by topic.
-When run, this JS outputs nested folders to the _data directory, containing a simple .json file for each subdirectories. */
+When run, this JS outputs nested folders to the _data directory, containing a simple .json file for each subdirectory. */
 const fs = require('fs');
 const path = require('path');
 const imagesFolder = './img';
