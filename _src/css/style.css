@@ -35,3 +35,17 @@ img#newt {
     width:80%;}
 
 section.gallery {display:none;}
+
+section.pushButton {width:30%; margin:auto; display:flex; justify-content: space-around}
+.pushButton button {
+    background-color:lavender;
+    font-size:larger;
+    accent-color:red;
+    padding:2em;
+    border-radius: 30%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.pushButton button:hover {
+    background-color:hotpink;
+   
+}
