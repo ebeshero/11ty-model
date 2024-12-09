@@ -47,5 +47,5 @@ section.pushButton {width:30%; margin:auto; display:flex; justify-content: space
 }
 .pushButton button:hover {
     background-color:hotpink;
-   
+
 }
