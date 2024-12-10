@@ -23,7 +23,7 @@ const smaugTexture = new THREE.TextureLoader().load('threed-images/tolkien-smaug
 
 const material = new THREE.MeshStandardMaterial( { color:0x6347FF, map:smaugTexture} );
 
-const cube = new THREE.Mesh( geometry, material );
+const cube = new THREE.Mesh( geometry, material, 'cube');
 cube.position.z = -25;
 cube.position.x = 8;
 cube.rotation.x = 2;
@@ -33,7 +33,7 @@ cube.rotation.y = .8;
 const ico = new THREE.IcosahedronGeometry(15, 1);
 const icoMaterial = new THREE.MeshPhongMaterial({ color:0x33AADD, map:msTexture, shininess:75});
 
-const icoMesh = new THREE.Mesh(ico, icoMaterial);
+const icoMesh = new THREE.Mesh(ico, icoMaterial, 'icosohedron');
 // object.position.set ( x, y, z );
 icoMesh.position.set(30, 10, -20)
 // icoMesh.position.z= -20;
@@ -41,7 +41,7 @@ icoMesh.position.set(30, 10, -20)
 
 const sphereGeo = new THREE.SphereGeometry( 20, 32, 16 );
 const sphereMaterial = new THREE.MeshBasicMaterial( { map:wowTexture } );
-const sphere = new THREE.Mesh( sphereGeo, sphereMaterial ); scene.add( sphere );
+const sphere = new THREE.Mesh( sphereGeo, sphereMaterial, 'sphere' ); scene.add( sphere );
 // object.position.set ( x, y, z );
 sphere.position.set(-30,5,-45)
 
@@ -95,23 +95,27 @@ function animate() {
 
 animate();
 
+// Raycasting for interactions!
 
-// document.querySelector('#app').innerHTML = `
-//   <div>
-//     <a href="https://vitejs.dev" target="_blank">
-//       <img src="${viteLogo}" class="logo" alt="Vite logo" />
-//     </a>
-//     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-//       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-//     </a>
-//     <h1>Hello Vite!</h1>
-//     <div class="card">
-//       <button id="counter" type="button"></button>
-//     </div>
-//     <p class="read-the-docs">
-//       Click on the Vite logo to learn more
-//     </p>
-//   </div>
-// `
-//
-// setupCounter(document.querySelector('#counter'))
+const raycaster = new THREE.Raycaster();
+
+document.addEventListener('mousedown', onMouseDown);
+
+function onMouseDown(event) {
+    const coords = new THREE.Vector2(
+        (event.clientX / renderer.domElement.clientWidth) * 2 - 1,
+        -((event.clientY / renderer.domElement.clientWidth) * 2 - 1),
+    );
+
+ raycaster.setFromCamera(coords, camera);
+
+ const intersections = raycaster.intersectObjects(scene.children, true);
+ if (intersections.length > 0) {
+     console.log(intersections);
+     const selectedObject = intersections[0].object;
+     const color = new THREE.Color(Math.random(), Math.random(), Math.random());
+     selectedObject.material.color = color;
+     console.log(`${selectedObject.name} was clicked!`)
+ }
+}
+
