@@ -5,6 +5,7 @@ layout: base.njk
 permalink: three.html
 ---
 
+# Three JS is amazing and magical\!
 
 <canvas id="bg"></canvas>
    <section class="text">

@@ -102,6 +102,7 @@ const raycaster = new THREE.Raycaster();
 document.addEventListener('mousedown', onMouseDown);
 
 function onMouseDown(event) {
+    console.log('hey! you clicked me! Why???')
     const coords = new THREE.Vector2(
         (event.clientX / renderer.domElement.clientWidth) * 2 - 1,
         -((event.clientY / renderer.domElement.clientWidth) * 2 - 1),
@@ -115,6 +116,7 @@ function onMouseDown(event) {
      const selectedObject = intersections[0].object;
      const color = new THREE.Color(Math.random(), Math.random(), Math.random());
      selectedObject.material.color = color;
+
      console.log(`${selectedObject.name} was clicked!`)
  }
 }
