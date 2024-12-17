@@ -102,7 +102,7 @@ const raycaster = new THREE.Raycaster();
 document.addEventListener('mousedown', onMouseDown);
 
 function onMouseDown(event) {
-    console.log('hey! you clicked me! Why???')
+    // console.log('hey! you clicked me! Why???')
     const coords = new THREE.Vector2(
         (event.clientX / renderer.domElement.clientWidth) * 2 - 1,
         -((event.clientY / renderer.domElement.clientWidth) * 2 - 1),
@@ -120,4 +120,7 @@ function onMouseDown(event) {
      console.log(`${selectedObject.name} was clicked!`)
  }
 }
+const scrollCanvas=document.getElementById('scrollTextCanvas');
+const scrollCtx = scrollCanvas.getContext('2d');
+let textX = canvas.width
 

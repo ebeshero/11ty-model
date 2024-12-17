@@ -49,3 +49,90 @@ section.pushButton {width:30%; margin:auto; display:flex; justify-content: space
     background-color:hotpink;
 
 }
+div#scrollText {
+    position:absolute;
+    top: 20vh; /* Does this center vertically in window? */
+    transform: translateY(-50%);
+    white-space: nowrap;
+    font-size: 2em;
+    font-weight: bolder;
+    color:#005500;
+    animation: scrollText 20s linear infinite;
+    padding-left: 50vw; /* Start off-screen to the right */
+    z-index: 1; /* Ensure text is on top of the canvas */
+    pointer-events: none; /* Allow mouse interaction with the canvas */
+}
+div#scrollText span.textmessage {
+    text-shadow: 4px 4px darkred;
+    border-radius:20%;
+    background-color:rgba(197,153,151,.8);
+
+}
+@keyframes scrollText {
+    0% { transform: translate(0%, -50%);}
+    100% {transform: translate(-200%, -50%); } /* Move fully off-screen to the left */
+}
+/* String of lights code (below), thanks to Net Ninja,
+CSS Tips and Tricks #1 - CSS-only Christmas Lights:  https://www.youtube.com/watch?v=B9OZkATMbag  */
+ul.string-of-lights {
+    text-align:center;
+    white-space:nowrap;
+    position:absolute;
+    padding:0;
+    padding-bottom:1.2em;
+    width:100%;
+    top:-30vh;
+    border-bottom: 3px solid #222;
+    height:100px;
+}
+ul.string-of-lights li {
+    position:relative;
+    list-style: none;
+    margin:0 15px;
+    padding:0;
+    display:inline-block;
+    width:15px;
+    height:30px;
+    border-radius:50%;
+    top: 175px; /* position the lights below the border of the ul,
+    to make them dangle under the "wire" */
+    background: #fff;
+    /* animation stuff here */
+    animation-name: even-flash;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-fill-mode:both; /* lets the animation loop? */
+
+}
+/* flash every even element, using alpha channel on rgb to control opacity */
+ul.string-of-lights li:nth-child(odd){
+    animation-name: odd-flash;
+}
+/* styling what comes before the li to make a little cap/cover for the bulb at the top of the light */
+ul.string-of-lights li:before{
+    content:"";
+    position:absolute;
+    width:14px;
+    height:10px;
+    border-radius:4px;
+    top:-5px;
+    left: 0;
+    background-color:#444;
+}
+@keyframes even-flash {
+    0% { background:rgba(10,230,65,1);
+    box-shadow: 0px 2px 20px 4px rgba(10,230,65,1);}
+    50% { background:rgba(10,230,65,0.5);
+        box-shadow: 0px 2px 20px 4px rgba(10,230,65,0.3);
+
+    }
+}
+@keyframes odd-flash {
+    50% { background:rgba(255,65,185,1);
+        box-shadow: 0px 2px 20px 4px rgba(255,65,185,1);}
+    0%, 100% { background:rgba(255,65,185,0.5);
+        box-shadow: 0px 2px 20px 4px rgba(255,65,185,0.3);
+
+    }
+}
+
