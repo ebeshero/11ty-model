@@ -4,7 +4,7 @@ param: DIGIT
 layout: base.njk
 permalink: three.html
 ---
-
+Can you select a 3D object and change its color?
 <canvas id="bg"></canvas>
 <div id="scrollText">
     <div id="scrollText">
