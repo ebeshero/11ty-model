@@ -33,6 +33,15 @@ Can you select a 3D object and change its color?
 <li></li>
 <li></li>
 <li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
 </ul>
     <p>🦌🦌🦌🦌🦌🦌🦌🦌🦌🔔<span class="textmessage">Thank You, and Happy Holidays, DIGIT!</span>🔔<span class="white" style="color:white;">❄❄❄❄</span>🌟🌟🌟🌟⛄</p>
 </div>
