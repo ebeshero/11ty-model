@@ -92,6 +92,11 @@ function animate() {
 
     renderer.render( scene, camera );
 }
+window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});
 
 animate();
 
@@ -123,4 +128,5 @@ function onMouseDown(event) {
 const scrollCanvas=document.getElementById('scrollTextCanvas');
 const scrollCtx = scrollCanvas.getContext('2d');
 let textX = canvas.width
+
 
